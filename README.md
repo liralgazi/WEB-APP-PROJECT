@@ -1,2 +1,3 @@
-# WEB-APP-PROJECT
-booking hotels website 
+# WikiHotel Backend
+
+Wikipedia for all Hotels

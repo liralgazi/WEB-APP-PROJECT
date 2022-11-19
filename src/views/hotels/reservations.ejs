@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>W-Hotels</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="/scripts/reservations.js "></script>
+    <link rel="icon" type="image/png" href="/css/images/black_logo.png.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/reservations.css">
+</head>
+
+<main>
+    <div class="reservations-class">
+        <div class="container">
+            <% if(userReservations.length > 0 ){ %>
+                <!-- <h2 class="main-sub-heading">.</h2> -->
+                <h2 class="main-sub-heading">Your Reservations:</h2>
+                <!--Reservations Table-->
+                <table id="reservations-table" class="reservations-table">
+                    <thead>
+                    <tr>
+                        <th>Hotel Name</th>
+                        <th>Country</th>
+                        <th>City</th>
+                        <th>Address</th>
+                        <th>Suites</th>
+                        <th>Standard Rooms</th>
+                        <th>Check In</th>
+                        <th>Check Out</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% for (var i = 0; i < userReservations.length ; i++) { %>
+                        <tr id="row-<%= i %>">
+                            <td id="hotelName-<%= i %>"><%= userReservations[i].hotelName %></td>
+                            <td id="country-<%= i %>"><%= userReservations[i].country %></td>
+                            <td id="city-<%= i %>"><%= userReservations[i].city %></td>
+                            <td id="fullAddress-<%= i %>"><%= userReservations[i].fullAddress %></td>
+                            <td id="suiteRoomAmount-<%= i %>"><%= userReservations[i].suiteRoomAmount %></td>
+                            <td id="regularRoomAmount-<%= i %>"><%= userReservations[i].regularRoomAmount %></td>
+                            <td id="checkIn-<%= i %>"><%= userReservations[i].checkIn.toISOString().replace('-', '/').split('T')[0].replace('-', '/') %></td>
+                            <td id="checkOut-<%= i %>"><%= userReservations[i].checkOut.toISOString().replace('-', '/').split('T')[0].replace('-', '/') %></td>
+                            <!-- buttons -->
+                            <td><input type="button" id='edit_button' value="Edit" class="button"
+                                       onclick="edit_row(<%= i %>)">
+                                <input type="button" id="save_button" value="Save" class="save"
+                                       onclick='save_row("<%= i %>", "<%= userReservations[i].reservationId %>")'>
+                            </td>
+                            <td>
+                                <input type="button" id='delete-<%= i %>' value="Delete" class="button delete-buttons"/>
+
+                            </td>
+                        </tr>
+                    <% } %>
+                    </tbody>
+                </table>
+            <% } else{ %>
+                <h2 class="main-sub-heading">You have no reservations yet :(</h2>
+                <a href="/hotels" class="btn btn-gradient">Book Now
+                    <span>
+                        <div class="dots">
+                            <i class="fas fa-allipsis-h"></i>
+                        </div>
+                    </span>
+                </a>
+            <% } %>
+        </div>
+    </div>
+</main>
+
+<body>
+<header class="header">
+    <div class="container">
+        <nav class="nav">
+            <a href="/" class="logo">
+                <img src="/css/images/w_logo.png" alt="">
+            </a>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="/" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/hotels" class="nav-link">Hotels</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/contact" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/reservations" class="nav-link">Reservations</a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a id="logout" class="nav-link">Logout</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+<footer class="footer ">
+    <div class="container ">
+        <div class="footer-content ">
+            <div class="footer-content-brand ">
+                <a href="/" class="logo ">
+                    <img class="logo-image " src="/css/images/w_logo.png " alt=" ">
+                </a>
+                <div class="paragraph ">
+                    E-mail: whotelsproject@gmail.com
+                </div>
+            </div>
+            <div class="social-media-wrap ">
+                <h4 class="footer-heading ">Follow Us</h4>
+                <div class="social-media ">
+                    <a href="https://he-il.facebook.com/WHotels/ " class="sm-link "><i
+                                class="fab fa-facebook-square "></i></a>
+                    <a href="https://www.instagram.com/whotels/ " class="sm-link "><i
+                                class="fab fa-instagram "></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>

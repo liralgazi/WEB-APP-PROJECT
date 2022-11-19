@@ -1,0 +1,85 @@
+{
+  "hotelName": "The Wiki Hotel Port Said",
+  "address": {
+    "country": "Egypt",
+    "fullAddress": "Port Said Governorate 8568101",
+    "city": "Port Fouad City"
+  },
+  "rating": {
+    "title": "Recommended",
+    "numStars": 4
+  },
+  "pricePerNight": 800,
+  "location": {
+    "latitude": 31.272488,
+    "longitude": 32.304370
+  },
+  "guestReviews": {
+    "avgRating": 6.7,
+    "totalNumRatings": 30
+  }
+}
+{
+  "hotelName": "The Wiki Hotel Abu Dabi",
+  "address": {
+    "country": "United Arab Emirates",
+    "fullAddress": "Al Ras Al Akhdar",
+    "city": "Abu Dhabi"
+  },
+  "rating": {
+    "title": "Very Good",
+    "numStars": 5
+  },
+  "pricePerNight": 2000,
+  "location": {
+    "latitude": 24.467014,
+    "longitude": 54.310201
+  },
+  "guestReviews": {
+    "avgRating": 9.7,
+    "totalNumRatings": 4000
+  }
+}
+
+{
+  "hotelName": "The Wiki Hotel Dubai",
+  "address": {
+    "country": "United Arab Emirates",
+    "fullAddress": "Workshop 105",
+    "city": "Maritime City, Dubai"
+  },
+  "rating": {
+    "title": "Very Good",
+    "numStars": 5
+  },
+  "pricePerNight": 2300,
+  "location": {
+    "latitude": 25.262354,
+    "longitude": 55.262137
+  },
+  "guestReviews": {
+    "avgRating": 7.7,
+    "totalNumRatings": 10000
+  }
+}
+{
+  "hotelName": "The Wiki Hotel Ankara",
+  "address": {
+    "country": "Turkey",
+    "fullAddress": "Yıldızevler, 723. Sk. 2-8, 06550 Çankaya",
+    "city": "Ankara"
+  },
+  "rating": {
+    "title": "Low Recommendations",
+    "numStars": 3
+  },
+  "pricePerNight": 500,
+  "location": {
+    "latitude": 39.875732,
+    "longitude": 32.856200
+  },
+  "guestReviews": {
+    "avgRating": 6.7,
+    "totalNumRatings": 2000
+  }
+}
